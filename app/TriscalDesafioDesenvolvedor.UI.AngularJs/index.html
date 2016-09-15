@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="appAjax">
+<head>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body ng-controller="appAjaxCtrl">
+
+    <br clear="all" />
+    <br clear="all" />
+
+    <div class="col-md-12">
+        Olá, Usuario.
+    </div>
+
+    <br clear="all" />
+    <br clear="all" />
+
+    <h3>Minhas compras</h3>
+
+
+
+    <div class="col-md-12">
+
+        <div class="row">
+
+            <a href="NovaCompra.html" class="btn btn-primary">Nova compra</a>
+
+            <br clear="all" />
+            <br clear="all" />
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Entrega</th>
+                        <th>Valor</th>
+                        <th>Remover</th>
+                        <th>Alterar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="x in dados">
+                        <td>
+                            <span>{{x.IdCompra}}</span>
+                        </td>
+
+                        <td>
+                            <span>{{x.DataEntrega | date: 'dd/MM/yyyy'}}</span>
+                        </td>
+
+                        <td>
+                            <span>{{x.ValorCompra|moeda}}</span>
+                        </td>
+                        <td>
+                            <span>Remover</span>
+                        </td>
+                        <td>
+                            <span>Alterar</span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        </div>
+        <script src="Scripts/angular.min.js"></script>
+        <!--Controller da Pagina-->
+
+    <script src="Scripts/Controllers/IndexController.js"></script>
+
+</body>
+</html>

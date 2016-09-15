@@ -1,0 +1,4 @@
+c:\Triscal\DesafioDesenvolvedor\TriscalDesafioDesenvolvedor\app\TriscalDesafioDesenvolvedor.Domain\bin\Debug\TriscalDesafioDesenvolvedor.Domain.dll
+c:\Triscal\DesafioDesenvolvedor\TriscalDesafioDesenvolvedor\app\TriscalDesafioDesenvolvedor.Domain\bin\Debug\TriscalDesafioDesenvolvedor.Domain.pdb
+c:\Triscal\DesafioDesenvolvedor\TriscalDesafioDesenvolvedor\app\TriscalDesafioDesenvolvedor.Domain\obj\Debug\TriscalDesafioDesenvolvedor.Domain.dll
+c:\Triscal\DesafioDesenvolvedor\TriscalDesafioDesenvolvedor\app\TriscalDesafioDesenvolvedor.Domain\obj\Debug\TriscalDesafioDesenvolvedor.Domain.pdb

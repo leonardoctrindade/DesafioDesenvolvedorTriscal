@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriscalDesafioDesenvolvedor.WebApi", "app\TriscalDesafioDesenvolvedor.UI\TriscalDesafioDesenvolvedor.WebApi.csproj", "{89B7C4E7-2805-46F1-9E81-B589348A8661}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriscalDesafioDesenvolvedor.Application", "app\TriscalDesafioDesenvolvedor.Application\TriscalDesafioDesenvolvedor.Application.csproj", "{A95E6BBC-C57B-4243-A638-B2E974DBDE7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriscalDesafioDesenvolvedor.Domain", "app\TriscalDesafioDesenvolvedor.Domain\TriscalDesafioDesenvolvedor.Domain.csproj", "{FB518806-CF6F-4C60-859D-1E59FC7D15B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriscalDesafioDesenvolvedor.Infra.Repositories", "app\TriscalDesafioDesenvolvedor.Infra.Repositories\TriscalDesafioDesenvolvedor.Infra.Repositories.csproj", "{EBDD7F33-7BB2-42AE-A686-703AFFCEC12E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApi", "WebApi", "{F71AC22A-3B24-4C87-A89F-5693372DCBD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{990AFE05-ECB8-41AD-817E-8AB9B1ADAA36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{932BF104-6B48-42E4-B7A1-D4FCFBFD761F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{0BB20A8E-D2E7-4F41-9BFC-AAA4C6E13DE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriscalDesafioDesenvolvedor.Infra.IoC", "app\TriscalDesafioDesenvolvedor.Infra.IoC\TriscalDesafioDesenvolvedor.Infra.IoC.csproj", "{9D91343F-E4E0-46DC-B0C7-9F525064ACF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{C928907B-2A3F-420B-BC29-66FB4DA4E798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriscalDesafioDesenvolvedor.UI.AngularJs", "app\TriscalDesafioDesenvolvedor.UI.AngularJs\TriscalDesafioDesenvolvedor.UI.AngularJs.csproj", "{60372A6F-1B7A-432B-A134-2410A248617A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4D0EA36D-2E03-4D63-A3F6-74E051687AB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriscalDesafioDesenvolvedor.Tests", "app\TriscalDesafioDesenvolvedor.Tests\TriscalDesafioDesenvolvedor.Tests.csproj", "{9AAA27A1-6881-4A44-BD78-C8DBC616EA43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89B7C4E7-2805-46F1-9E81-B589348A8661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B7C4E7-2805-46F1-9E81-B589348A8661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B7C4E7-2805-46F1-9E81-B589348A8661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B7C4E7-2805-46F1-9E81-B589348A8661}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A95E6BBC-C57B-4243-A638-B2E974DBDE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A95E6BBC-C57B-4243-A638-B2E974DBDE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A95E6BBC-C57B-4243-A638-B2E974DBDE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A95E6BBC-C57B-4243-A638-B2E974DBDE7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB518806-CF6F-4C60-859D-1E59FC7D15B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB518806-CF6F-4C60-859D-1E59FC7D15B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB518806-CF6F-4C60-859D-1E59FC7D15B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB518806-CF6F-4C60-859D-1E59FC7D15B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDD7F33-7BB2-42AE-A686-703AFFCEC12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDD7F33-7BB2-42AE-A686-703AFFCEC12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDD7F33-7BB2-42AE-A686-703AFFCEC12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDD7F33-7BB2-42AE-A686-703AFFCEC12E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D91343F-E4E0-46DC-B0C7-9F525064ACF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D91343F-E4E0-46DC-B0C7-9F525064ACF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D91343F-E4E0-46DC-B0C7-9F525064ACF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D91343F-E4E0-46DC-B0C7-9F525064ACF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60372A6F-1B7A-432B-A134-2410A248617A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60372A6F-1B7A-432B-A134-2410A248617A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60372A6F-1B7A-432B-A134-2410A248617A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60372A6F-1B7A-432B-A134-2410A248617A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AAA27A1-6881-4A44-BD78-C8DBC616EA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AAA27A1-6881-4A44-BD78-C8DBC616EA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AAA27A1-6881-4A44-BD78-C8DBC616EA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AAA27A1-6881-4A44-BD78-C8DBC616EA43}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89B7C4E7-2805-46F1-9E81-B589348A8661} = {F71AC22A-3B24-4C87-A89F-5693372DCBD7}
+		{A95E6BBC-C57B-4243-A638-B2E974DBDE7A} = {990AFE05-ECB8-41AD-817E-8AB9B1ADAA36}
+		{FB518806-CF6F-4C60-859D-1E59FC7D15B2} = {932BF104-6B48-42E4-B7A1-D4FCFBFD761F}
+		{EBDD7F33-7BB2-42AE-A686-703AFFCEC12E} = {0BB20A8E-D2E7-4F41-9BFC-AAA4C6E13DE8}
+		{9D91343F-E4E0-46DC-B0C7-9F525064ACF9} = {0BB20A8E-D2E7-4F41-9BFC-AAA4C6E13DE8}
+		{60372A6F-1B7A-432B-A134-2410A248617A} = {C928907B-2A3F-420B-BC29-66FB4DA4E798}
+		{9AAA27A1-6881-4A44-BD78-C8DBC616EA43} = {4D0EA36D-2E03-4D63-A3F6-74E051687AB9}
+	EndGlobalSection
+EndGlobal

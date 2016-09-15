@@ -1,0 +1,1 @@
+c:\Triscal\DesafioDesenvolvedor\TriscalDesafioDesenvolvedor\app\TriscalDesafioDesenvolvedor.UI.AngularJs\obj\Debug\TriscalDesafioDesenvolvedor.UI.AngularJs.csprojResolveAssemblyReference.cache

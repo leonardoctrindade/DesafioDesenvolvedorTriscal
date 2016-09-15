@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html ng-app="appDesafioDesenvolvedor">
+<head>
+    <title>Desafio Desenvolvedor Compras </title>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Custom.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+    <div ng-controller="appDesafioDesenvolvedorNovaCompraCtrl">
+
+
+        <br clear="all" />
+        <br clear="all" />
+
+        <div class="col-md-12">
+            Olá, Usuario.
+        </div>
+
+        <br clear="all" />
+        <br clear="all" />
+
+        <div class="col-md-6">
+            <label>Categoria:</label>
+            <select data-ng-model="categoria" class="form-control"
+                    data-ng-options="c.IdCategoria as c.Categoria1 for c in dadosCategoria"
+                    data-ng-change="CarregaDadosSubCategoria()">
+                <option value="">Selecione uma Categoria</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label> Sub-Categoria:</label>
+            <select class="form-control" data-ng-change="CarregaDadosProdutosSubCategoria()" data-ng-model="subcategoria" data-ng-disabled="!categoria"
+                    data-ng-options="s.IdSubCategoia as s.SubCategoia1 for s in dadosSubCategoria">
+                <option value="">Selecione uma sub-categoria</option>
+            </select>
+        </div>
+
+        <div class="col-md-12">
+            <h4>Produtos</h4>
+            <div ng-show="!dadosProdutos.length">
+                <h5>Nenhum Produto a ser exibido.</h5>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-3 col-md-2" ng-repeat="x in dadosProdutos" ng-show="dadosProdutos.length">
+                    <div class="thumbnail">
+                        <img ng-src="{{x.PathImagem}}"
+                             data-holder-rendered="true" class="Imagem">
+                        <div class="caption">
+                            <h3>{{x.Nome}}</h3> <p>{{x.Descricao}}</p>
+                            <p>
+                                <a href="#" class="btn btn-primary TamanhoTotal" data-toggle="modal"
+                                   data-target="#verDetalhesModal"
+                                   ng-click="VerDetalhesProdutos(x.IdProduto)">Ver detalhes</a>
+
+                                <h4>Quantidade em estoque: {{x.QuantidadeProdutos}}</h4>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!--MODAL DE DETAHES DO PRODUTO-->
+            <div class="modal fade" id="verDetalhesModal" tabindex="-1" role="dialog" aria-labelledby="verDetalhesModal" aria-hidden="true">
+
+                <div class="modal-dialog">
+                    <div class=" modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modalTitulo">Detalhe do Produto {{produtoVerDetalhes.Nome}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img ng-src="{{produtoVerDetalhes.PathImagem}}"
+                                 data-holder-rendered="true">
+                            <h4>{{produtoVerDetalhes.Nome}} - <strong>R$ {{produtoVerDetalhes.Valor}}</strong></h4>
+                            <h5>{{produtoVerDetalhes.Descricao}}</h5>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary" ng-click="AdicionarProdutosCarrinho(produtoVerDetalhes.IdProduto)" data-dismiss="modal">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Carrinho</h4>
+
+            <div class="panel panel-default">
+                <div ng-show="!produtosCarrinho.length">
+                    <h5>Nenhum Produto no carrinho.</h5>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-striped" ng-show="produtosCarrinho.length">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Quantidade</th>
+                                    <th>Valor</th>
+                                    <th>Quantidade em estoque</th>
+                                    <th>Remover</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in produtosCarrinho">
+                                    <td>{{x.Nome}}</td>
+                                    <td>
+                                        <input ng-change="AtualizarQuantidade(quant,x.IdProduto)" ng-init="quant = x.Quantidade" type="text" ng-model="quant" numbers-only class="form-control TamanhoQuantidade" />
+                                    </td>
+                                    <td>
+                                        <span>{{(x.Valor * quant)|moeda}}</span>
+                                    </td>
+                                    <td>
+                                        {{x.QuantidadeProdutos}} íten(s) disponívei(s)
+                                    </td>
+                                    <td><a href="#" ng-click="RemoverProdutosCarrinho($index)">Remover</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <hr />
+        <div class="col-md-12">
+            <div class="row">
+
+
+                <div class="col-md-6">
+                    <h4>Resumo da Compra</h4>
+
+                    <div ng-show="!dadosProdutos.length">
+                        <div class="panel panel-default">
+                            <h5>Nenhum Resumo de compra a ser exibido.</h5>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default" ng-show="produtosCarrinho.length">
+                        <div class="col-md-6"> <h4>Total de Itens: {{TotalItens}}</h4></div>
+                        <div class="col-md-6"> <h4>Total: {{ValorProdutosEntrega|moeda}}</h4></div>
+
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Quantidade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="x in produtosCarrinho">
+                                    <td>{{x.Nome}}</td>
+                                    <td>
+                                        <span ng-show="quantidade.length">{{(x.Valor * quantidade)|moeda}}</span>
+                                        <span ng-show="!quantidade.length">{{x.Quantidade}}</span>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6">
+                    <h4>Entrega - * Campos obrigatórios</h4>
+
+                    <div ng-show="!dadosProdutos.length">
+                        <div class="panel panel-default">
+                            <h5>A entrega só exibida quando tiver itens no carrinho.</h5>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default" ng-show="produtosCarrinho.length">
+                        <div ng-show="produtosCarrinho.length">
+                            <form name="entregaForm" ng-submit="VerificandoCampos(entregaForm.$valid)" novalidate>
+                                <div class="col-md-6">
+                                    <label>* Tipo de Entrega</label>
+                                    <select name="tipoEntrega" data-ng-model="tipoEntrega" class="form-control" data-ng-change="VerificaTipoEntregaEndereco(tipoEntrega)"
+                                            data-ng-options="c.IdTipoEntrega as c.TipoEntrega1 for c in dadosTipoEntrega" required>
+                                        <option value="">Selecione o tipo de entrega</option>
+                                    </select>
+                                    <p ng-show="entregaForm.tipoEntrega.$invalid && !entregaForm.tipoEntrega.$pristine" class="help-block">O Tipo de entrega é obrigatório</p>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <label>* Data de Entrega</label>
+                                    <input type="date" name="data" ng-model="data" class="form-control" required />
+                                    <p ng-show="entregaForm.data.$invalid && !entregaForm.data.$pristine" class="help-block">A Data é obrigatória</p>
+                                </div>
+
+                                <div class="col-md-12" ng-show="tipoEntregaHabilitaEndereco == true">
+                                    <label>* Endereço de Entrega</label>
+                                    <input type="text" ng-model="endereco" class="form-control" name="endereco" ng-required="tipoEntregaHabilitaEndereco == true" />
+                                    <p ng-show="entregaForm.endereco.$invalid && !entregaForm.endereco.$pristine" class="help-block">O Endereço é obrigatório</p>
+                                </div>
+                                <br clear="all" />
+                                <br clear="all" />
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary TamanhoTotal" ng-disabled="entregaForm.$invalid">Finalizar Compra</button>
+                                </div>
+                            </form>
+                        </div>
+                        <br clear="all" />
+                        <br clear="all" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <!--Jquery foi adicionado para o bootstrap modal-->
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!--Controller da Pagina-->
+    <script src="Scripts/Controllers/NovaCompraController.js"></script>
+
+
+</body>
+
+
+</html>

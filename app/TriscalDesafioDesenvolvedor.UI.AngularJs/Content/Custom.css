@@ -1,0 +1,31 @@
+﻿.CaixaProduto {
+    width: 170px;
+    float: left;
+    border-width: .2em;
+    border-style: dotted;
+    border-color: #900;
+    text-align: center;
+}
+
+.Imagem{
+     height: 50px;width: 70%; display: block;
+}
+
+.AlinhaBotaoMeio {
+    text-align: center;
+}
+
+.TamanhoTotal{
+    width:100%;
+}
+
+.TamanhoQuantidade{
+    width:20%
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
